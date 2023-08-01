@@ -13,7 +13,7 @@ spec:
       releaseName: nginx-helm
       values: |
         replicaCount: 5
-        nginxVersion: "1.16.2"
+        nginxVersion: 1.16.2
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx
