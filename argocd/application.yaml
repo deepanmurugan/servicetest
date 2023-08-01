@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: nginx-helm
       values: |
-        replicaCount: 5
+        replicaCount: 4
         nginxVersion: 1.19
   destination:
     server: https://kubernetes.default.svc
