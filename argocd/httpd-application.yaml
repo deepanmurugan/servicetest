@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: httpd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/deepanmurugan/servicetest.git
+    targetRevision: HEAD
+    path: httpd
+    helm:
+      releaseName: httpd-helm
+      values: |
+        replicaCount: 8
+        httpdVersion: 2.4
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: httpd
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true 
