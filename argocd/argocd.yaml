@@ -4,7 +4,7 @@ metadata:
   name: argocd-manage-dpop
   namespace: argocd
 spec:
-  project: default
+  project: dpop-project
   source:
     repoURL: https://github.com/deepanmurugan/servicetest.git
     targetRevision: HEAD
